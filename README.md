@@ -85,4 +85,4 @@ We note that `d` must be initialized to `-1`. That ensures that `H` is `3`. This
 
 Since the initial value of `S[7][6]` is `-1`, `d` is also `0` on entry for the first call to `m()`. Therefore `d` is purely a distraction and can be replaced by `0` in `m()`.
 
-If `S[7][6]` were not initialized to `-1`, the first invocation of `m()` would work incorrectly and that would probably lead to a segmentation fault.
+If `S[7][6]` and `d` were not initialized to the same value, the first invocation of `m()` would work incorrectly and that would probably lead to a segmentation fault.
