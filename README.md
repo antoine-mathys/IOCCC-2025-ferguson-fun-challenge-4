@@ -81,10 +81,8 @@ if (m(lo, tr, L) || (b != j * 2))
     X; // returns
 ```
 
-Since `d` is initialized to the initial value of `S[7][6]`, `d` is also `0` on entry for the first call to `m()`. Therefore `d` is purely a distraction and can be replaced by `0` in `m()`.
+We note that `d` must be initialized to `-1`. That ensures that `H` is `3`. This is required because it is the number of bytes per pixel in the image file format used.
 
-Initializing `d` to a value different from `S[7][6]` is not useful. That would simply make the first invocation of `m()` work incorrectly and probably lead to a segmentation fault.
+Since the initial value of `S[7][6]` is `-1`, `d` is also `0` on entry for the first call to `m()`. Therefore `d` is purely a distraction and can be replaced by `0` in `m()`.
 
-Note that `d` must be initialized to the precise value `-1`. That ensures that `H` is `3`. This is required because it is the number of bytes per pixel in the image file format used.
-
-Therefore, although the initial content of `S` can be changed to some extent, we deduce that the initial value of `S[7][6]` must be `-1`.
+If `S[7][6]` were not initialized to `-1`, the first invocation of `m()` would work incorrectly and that would probably lead to a segmentation fault.
