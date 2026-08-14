@@ -44,17 +44,7 @@ if (fread(c, -*(S[F]), b * j, q) != j * j * 2)
 
 Changing the value of d before returning is a no-op. Note that `d` stays `0` irrespective of the value of `N`. Thus both comments are erroneous.
 
-If `N` is different from `1`, we have:
-
-```c
-...
-c = calloc(1, H * *Q * j);
-if (c != 0)
-    X; // returns
-...
-```
-
-and a successful call to `calloc()` causes the program to terminate. That is obviously not what we want. Hence `N` must be `1`.
+We observe that if `N` is neither `0` nor `1`, the program always terminates. And if `N` is `0`, a successful call to `calloc()` causes the program to terminate. That is obviously not what we want. Hence `N` must be `1`.
 
 Since `d` is not set again, we observe that it is `0` on entry for the last three calls to `m()`.
 
