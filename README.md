@@ -71,8 +71,9 @@ if (m(lo, tr, L) || (b != j * 2))
     X; // returns
 ```
 
-We note that `d` must be initialized to `-1`. That ensures that `H` is `3`. This is required because it is the number of bytes per pixel in the image file format used.
+We note that `d` must be initialized to `-1`. That ensures that `H` is `3`. This is required because it represents the number of bytes per pixel in the image file format used.
 
 Since the initial value of `S[7][6]` is `-1`, `d` is also `0` on entry for the first call to `m()`. Therefore `d` is purely a distraction and can be replaced by `0` in `m()`.
 
-If `S[7][6]` were not initialized to `-1`, the first invocation of `m()` would work incorrectly and that would probably lead to a segmentation fault.
+### Bonus
+If `d` were initialized to a value different from `-1`, nothing useful would happen. In addition to the number of bytes per pixel being wrong, `d` would be incorrect on the first call to `m()` and `H` and `I` would be incorrect on all calls. Since these constants appear all over the place in indices to the `S` array, for obfuscation purposes, any change is likely to not only produce garbage but lead to a segmentation fault.
