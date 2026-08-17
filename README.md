@@ -7,16 +7,13 @@ Written in 2026 by Antoine Mathys.
 Let's look at the following code snippet:
 
 ```c
-c = calloc(1, (F = 9, H * *Q * j)), x = -(tr + R) * *Q / T, d = c == e != d,
-Y = (lo + R) * *Q / T, d = c != e != d != d == 2 * d, d *= 2,
-y = -(-U + 90) * j / R, x = -x, Z = (-L + 90) * j / R,
-d = !-!(c != e) != d - 1 != d + 1, x = -x, Y = -Y, Y = -Y,
-d = -!-!(c != e) == d, Y = -Y, d = -d, x = -x, x = -x,
+c = calloc(1, (F = 9, H * *Q * j)),
+...
 d = c == e != d == !(c == e) != d / 2,
 d = d / 2; /* CHANGE != 1 AND PROVE d IS 1 */
 if (d = (c != e == !d != d != d == 1 && e != c) != 1 ||
-        /* NOW YOU KNOW d IS 1! */ fread(c, -*(S[F]) - d * 3, b * j, q) ^
-            j * j * 2)
+        /* NOW YOU KNOW d IS 1! */
+        fread(c, -*(S[F]) - d * 3, b * j, q) ^ j * j * 2)
     X;
 ```
 
@@ -28,17 +25,14 @@ The code becomes:
 
 ```c
 F = 9;
-x = -(tr + R) * *Q / T;
-Y = -((lo + R) * *Q / T);
-y = -(-U + 90) * j / R;
-Z = (-L + 90) * j / R;
+...
 d = 0;
 c = calloc(1, H * *Q * j);
 /* CHANGE N AND PROVE d IS 1 */
 if ((c != 0) != N)
     X; // returns
 /* NOW YOU KNOW d IS 1! */
-if (fread(c, -*(S[F]), b * j, q) != j * j * 2)
+if (fread(c, -S[F][0], b * j, q) != j * j * 2)
     X; // returns
 ```
 
