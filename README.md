@@ -17,9 +17,9 @@ if (d = (c != e == !d != d != d == 1 && e != c) != 1 ||
     X;
 ```
 
-Before this, `e` and `c` are `0`, and the call to `m()` might have set `e` to `c`. Thus they are both still equal to `0`.
+Before this, `e` and `c` are `0`, and the call to `m()` might have set `e` to `c`. Thus, they are both still equal to `0`.
 
-We also replace `!= 1` by `!= N`, for some constant `N`.
+We also replace `!= 1` with `!= N`, for some constant `N`.
 
 The code becomes:
 
@@ -67,7 +67,7 @@ if (m(lo, tr, L) || (b != j * 2))
 
 We note that `d` must be initialized to `-1`. That ensures that `H` is `3`. This is required because it represents the number of bytes per pixel in the image file format used.
 
-Since the initial value of `S[7][6]` is `-1`, `d` is also `0` on entry for the first call to `m()`. Therefore `d` is purely a distraction and can be replaced by `0` in `m()`.
+Since the initial value of `S[7][6]` is `-1`, `d` is also `0` on entry for the first call to `m()`. Therefore, `d` is purely a distraction and can be replaced by `0` in `m()`.
 
 ### Bonus
-If `d` were initialized to a value different from `-1`, nothing useful would happen. In addition to the number of bytes per pixel being wrong, `d` would be incorrect on the first call to `m()` and `H` and `I` would be incorrect on all calls. Since these constants appear in indices to the `S` array, for obfuscation purposes, any change is likely to not only produce garbage but lead to a segmentation fault.
+If `d` were initialized to a value different from `-1`, nothing useful would happen. In addition to the number of bytes per pixel being wrong, `d` would be incorrect on the first call to `m()` and `H` and `I` would be incorrect on all calls. Since these constants appear in indices to the `S` array, for obfuscation purposes, any change is likely to not only produce garbage but also lead to a segmentation fault.
